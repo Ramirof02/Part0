@@ -1,0 +1,13 @@
+sequenceDiagram
+    Browser->>+Server: GET /spa
+    Server-->>-Browser: HTML, CSS, JavaScript
+    Browser->>+SPA: Load
+    SPA-->>-Browser: Execute
+    loop API Interaction
+        Browser->>+API: HTTP Request
+        API-->>-Browser: HTTP Response
+    end
+    loop Data Display
+        Browser->>+SPA: Render
+        SPA-->>-Browser: Display
+    end
