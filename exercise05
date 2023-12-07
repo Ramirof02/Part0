@@ -1,0 +1,11 @@
+sequenceDiagram
+    Browser->>+SPA: Open https://studies.cs.helsinki.fi/exampleapp/spa
+    SPA-->>-Browser: Display application UI
+    loop Data Fetching
+        Browser->>+API: Send GET request to retrieve note data
+        API-->>-Browser: Send HTTP response with note data
+    end
+    loop Data Display
+        Browser->>+SPA: Render fetched note list
+        SPA-->>-Browser: Display fetched note list
+    end
