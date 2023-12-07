@@ -1,0 +1,13 @@
+sequenceDiagram
+    Browser->>+SPA: Open https://studies.cs.helsinki.fi/exampleapp/notes
+    SPA-->>-Browser: Display the notes page
+    Browser->>+SPA: Fill in the form and click Save
+    SPA-->>-Browser: Display the new note in the list
+    loop Data Creation
+        Browser->>+API: Send POST request to create a new note
+        API-->>-Browser: Send HTTP response with the new note data
+    end
+    loop Data Display
+        Browser->>+SPA: Render the fetched note list
+        SPA-->>-Browser: Display the fetched note list
+    end
